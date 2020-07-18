@@ -2,10 +2,7 @@
 
 https://github.com/rockthejvm/scala-beginners/tree/master/src
 
-* 6.recursion
+* 7. Call-by-Name and Call-by-Value
 
-* ループ処理では、do whileはNG
-* ループ処理・iteratorでは、tail-recursionを使う(stack-overflowを回避)
-https://nrinaudo.github.io/scala-best-practices/unsafe/recursion.html
+* ストリーム処理などで、call by valueは渡した引数の値をそのまま使うが、call by valueなら関数内で使われるたびに引数を評価し直す（現在の時刻は？など）
 
-* 変数を蓄積せず、引き渡していき最後から最初に処理していく
