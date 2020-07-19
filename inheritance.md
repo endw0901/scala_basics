@@ -6,3 +6,5 @@ https://github.com/rockthejvm/scala-beginners/tree/master/src
 
 * overrideは上書き、overloadは変数の違うコール方法の追加
 * super.でoverride前のparentのmethodをそのまま使える
+
+* finalをつけるとmethodがoverrideされるのを禁止する
