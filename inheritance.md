@@ -8,3 +8,4 @@ https://github.com/rockthejvm/scala-beginners/tree/master/src
 * super.でoverride前のparentのmethodをそのまま使える
 
 * finalをつけるとmethodがoverrideされるのを禁止する
+* final class名でclass自体のinheritanceを禁止できる
