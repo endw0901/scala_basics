@@ -1,5 +1,6 @@
 # 集合(SET)
 - list:重複ok ⇔ set：重複NG
+- map:key-value
 
 - setはimmutable、importでmutable
 ```
