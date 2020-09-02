@@ -1,4 +1,4 @@
-# index
+# indexOf 位置
 
 ## index
 - 1 + 5と同じようにindexOfが+のように解釈される
