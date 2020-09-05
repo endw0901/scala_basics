@@ -1,6 +1,7 @@
 # クラス生成条件require
 
 - 0で割るときはclassを生成しない、などの条件をつけたい
+- requireを満たさないとき、IllegalArgumentExceptionを投げる
 
 ```scala
 object ScalaPlayground extends App {
