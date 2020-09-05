@@ -3,6 +3,7 @@
 - 通常は、res0:xxxxxxのような表示のみ
 
 ## toStringをoverride
+- デバッグ用のtoStringを上書きすることで、printlnも省略でき、余計なメッセージ表示が省略できる
 
 ```scala
 // 結果：2/3
