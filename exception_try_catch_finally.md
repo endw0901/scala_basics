@@ -63,6 +63,20 @@ object HandlingFailure extends App {
 
 ```
 ### 練習
+- 処理の流れ
+
+```
+1.possibleHTMLは、①possibleConnectionを呼び出し、②connectionクラスのgetSafeをcall
+①-1.possibleConnectionは、HttpServiceのgetSafeCnnectionを呼び出す
+①-2.HttpServiceのgetSafeCnnectionは、HttpServiceのgetConnectionを呼び出しConnectionクラスを取得する
+①-3.HttpServiceのgetConnectionで成功したらConnection、失敗したらerror
+⇒Connectionクラスを取得
+
+②connectionクラスのgetSafeをcall
+②-1.ConnectionのgetSafeは、urlを引数にgetをcall
+②-2.get関数は、成功したらhtml、失敗したらエラーを返す
+⇒foreachで取得したhtmlまたはエラーを返す
+```
 ```scala
   val host = "localhost"
   val port = "8080"
