@@ -31,6 +31,9 @@ object ScalaPlayground extends App {
   println(oneHalf add twoThirds)
 
   // val twozero = new Rational(2,0)
+  
+  // フィールドにアクセス
+  println("oneHalf.numer :" + oneHalf.numer)
 }
 ```
 
