@@ -3,6 +3,7 @@
 
 ## finally
 - なにがあっても確実にファイルをクローズしたいときなど
+- 値を返したり、tryやcatchの結果を変更することはNG（書けばできてしまうがやらない)
 ```scala
 import java.io.FileReader
 val file = new FileReader("input.txt")
