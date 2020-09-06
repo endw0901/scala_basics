@@ -22,9 +22,6 @@ package lectures.part3fp
 
 import scala.util.{Random, Try, Failure, Success}
 
-/**
-  * Created by Daniel.
-  */
 object HandlingFailure extends App {
 
   // create success and failure
@@ -64,9 +61,9 @@ object HandlingFailure extends App {
   println(aSuccess.filter(_ > 10))
   // => for-comprehensions
 
-  /*
-    Exercise
-   */
+```
+### 練習
+```scala
   val host = "localhost"
   val port = "8080"
   def renderHTML(page: String) = println(page)
