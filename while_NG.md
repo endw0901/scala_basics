@@ -30,11 +30,30 @@ def printArgs(args: Array[String]): Unit = {
 ```
 
 ## whileを関数型プログラムに改善する例
-- 大変なwhileの例
+- 大変なwhileの例(varを使う)
 ```scala
+object ScalaPlayground extends App {
+  def gcdLoop(x: Long, y: Long): Long = {
+    var a = x
+    var b = y
+    while ( a != 0) {
+      val temp = a
+      a = b % a
+      b = temp
+    }
+    b
+  }
+
+  println(gcdLoop(66,42))
+}
 
 ```
-- 関数型プログラミングの例
+- 関数型プログラミングの例(変数は使わない、再帰)
 ```scala
+object ScalaPlayground extends App {
+  def gcd(x: Long, y: Long): Long =
+    if (y == 0) x else gcd(y, x % y)
 
+  println(gcd(66,42))
+}
 ```
