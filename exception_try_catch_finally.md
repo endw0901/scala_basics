@@ -71,6 +71,7 @@ object HandlingFailure extends App {
   val port = "8080"
   def renderHTML(page: String) = println(page)
 
+  // ランダムに成功・失敗する接続クラス
   class Connection {
     def get(url: String): String = {
       val random = new Random(System.nanoTime())
