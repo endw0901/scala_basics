@@ -16,6 +16,7 @@ try{
 ## try - catchの改善版エラーハンドリング
 - https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/learn/lecture
 - 34.Handling Failure参照
+- Try(unsafeMethod()).orElse(Try(backupMethod()))を使い、例外にはthrow new RuntimeException("エラーメッセージ")
 
 ```scala
 package lectures.part3fp
