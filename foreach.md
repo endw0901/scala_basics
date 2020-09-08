@@ -44,3 +44,33 @@ def printArgs(args: Array[String]): Unit = {
   args.foreach(println)
 }
 ```
+
+
+## Listからforeach
+- p.156
+```scala
+val someNumbers = List(-11, 10, 0, 5, 10)
+sumeNumbers.foreach((x: Int) => println(x))
+```
+
+
+- Listのうち、正の値のみ抽出
+```scala
+val someNumbers = List(-11, 10, 0, 5, 10)
+sumeNumbers.filter((x: Int) => x > 0)
+// 結果・・・List[Int] = List(5, 10)
+```
+
+- 省略形(推論による型付け：target typing)
+```scala
+val someNumbers = List(-11, 10, 0, 5, 10)
+sumeNumbers.filter(x => x > 0)
+// 結果・・・List[Int] = List(5, 10)
+```
+
+- さらに省略形_プレースホルダー構文
+```scala
+val someNumbers = List(-11, 10, 0, 5, 10)
+sumeNumbers.filter(_ > 0)
+// 結果・・・List[Int] = List(5, 10)
+```
