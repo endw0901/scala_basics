@@ -36,3 +36,22 @@ f(5, 10)
 // 結果・・・Int = 15
 
 ```
+
+## （）も省略するパターン
+
+- 省略前
+```scala
+sumeNumbers.foreach(x => println(x))
+```
+
+- 省略形
+```scala
+sumeNumbers.foreach(println _)
+```
+
+
+- さらに省略形 p.160
+- foreachが関数を要求しているので省略可能
+```scala
+sumeNumbers.foreach(println)
+```
