@@ -39,3 +39,34 @@ object ScalaPlayground extends App {
 
 ## パラメータフィールド
 - p.191
+
+- 改善前：パラメータフィールド（引数）を受けてクラス内のフィールドに設定
+```scala
+  class ArrayElement(conts: Array[String]) extends Element {
+    val contents: Array[String] = conts
+  }
+```
+
+- 改善後：フィールドを引数に移す
+- パラメータとフィールドに同名で定義するため、valを付与
+```scala
+  class ArrayElement(
+    val contents: Array[String]
+) extends Element
+```
+
+### field を引数に移す別例
+
+```scala
+class Tiger(param1: Boolean, param2: Int) extends Cat {
+  override val dangerous = param1
+  private var age = param2
+}
+```
+
+```scala
+class Tiger(
+  override val dangerous: Boolean,
+  private var age: Int
+) extends Cat
+```
