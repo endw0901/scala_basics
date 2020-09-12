@@ -33,3 +33,5 @@
   }
 ```
   
+## ファクトリーオブジェクトを使い、サブクラスを非公開とする例
+- https://github.com/endw0901/scala_basics/blob/master/factory_object.md
