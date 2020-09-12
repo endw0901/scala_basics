@@ -23,3 +23,21 @@ val data = new Array[String](2)
   for(i <- 0 to 1)
     print(data(i))
 ```
+
+## 配列の連結
+
+- ++
+```scala
+  abstract class Element {
+    def contents: Array[String]
+    def height: Int = contents.length
+    def width: Int = if (height == 0) 0 else contents(0).length
+  }
+
+  class ArrayElement(conts: Array[String]) extends Element {
+    def contents: Array[String] = conts
+  }
+  
+def above(that: Element): Element =
+    new ArrayElement(this.contents ++ that.contents)  
+```
