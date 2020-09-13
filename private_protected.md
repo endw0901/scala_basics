@@ -1,4 +1,5 @@
 # private、protectedの範囲
+- privateもprotectedも書いていなければpublic
 ```scala
   // privateの範囲
   class Outer {
