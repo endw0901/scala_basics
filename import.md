@@ -1,5 +1,8 @@
 # import
-- アクセス方法
+- importはどこにでも書ける
+- パッケージだけでなく、オブジェクトも参照できる
+
+## アクセス方法
 ```scala
   package bobsdelights
   abstract class Fruit (
