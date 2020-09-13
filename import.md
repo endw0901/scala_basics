@@ -45,3 +45,26 @@
     val pat = regex.Pattern.compile("a*b")
   }
 ```
+
+## 部分的にimport
+``` scala
+import Fruits.{Apple, Orange}
+```
+
+## リネームしてインポート
+``` scala
+import Fruits.{Apple => McIntosh, Orange}
+
+// java.sql.Dateを、「S.Date」と書けるようになる
+import java.{sql => S}
+```
+
+## リネーム＆全てのメンバをインポート
+``` scala
+import Fruits.{Apple => McIntosh, _}
+```
+
+## 指定したメンバ以外をインポート
+``` scala
+import Fruits.{Pear => _, _}
+```
