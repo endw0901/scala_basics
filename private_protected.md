@@ -1,5 +1,5 @@
 # private、protectedの範囲
-
+```scala
   // privateの範囲
   class Outer {
     class Inner {
@@ -22,3 +22,4 @@
     class Other {
       (new Super).f() //error 
     }
+```
