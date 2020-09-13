@@ -5,6 +5,7 @@
 - traitは引数を取れない
 - 複数のミックスインは extends XXX with AAAA with BBB {}とwithを複数回入れることで可能
 - ミックスインしたメソッドを継承し、オーバーライドも可能
+- p.230 線形化
 
 ## メリット
 - traitはjavaのinterfaceと違って既に定義されているのでリッチにしやすい
