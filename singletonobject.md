@@ -1,8 +1,8 @@
-# シングルトンオブジェクト
+# シングルトンオブジェクト_コンパニオン
 
 - object で宣言されたクラスからは、ひとつのインスタンスしか生成することができません。これを シングルトンオブジェクト といいます。
 - https://qiita.com/kingzer0314/items/a6b82034f760f024fdfa
-```
+```scala
 import scala.collection.mutable
 
 // シングルトンオブジェクト＝クラスが同名のとき => コンパニオンクラス（お互いの非公開メンバーアクセス可能）
@@ -28,4 +28,27 @@ object ChecksumAccumulator {
      }
 }
 
+```
+
+## コンパニオンオブジェクト
+
+```scala
+  class Rocket {
+    import Rocket.fuel
+    // Rocketオブジェクトからアクセス可能
+    private def canGoHomeAgain = fuel > 20
+  }
+  // Rocketクラスのコンパニオン（同名のシングルトンオブジェクト(=objectで定義されるもの))
+  object Rocket {
+    // Rocketクラスからアクセス可能
+    private def fuel = 10
+    def chooseStrategy(rocket: Rocket) = {
+      if (rocket.canGoHomeAgain)
+        goHome()
+      else
+        pickAStar()
+    }
+    def goHome() = {}
+    def pickAStar() = {}
+  }
 ```
