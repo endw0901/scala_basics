@@ -29,3 +29,6 @@
   // 先頭文字がaなら
  case s:String if s(0) == 'a' => ...
  ```
+
+## シールドクラス
+- https://github.com/endw0901/scala_basics/blob/master/sealed_class.md
