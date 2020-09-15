@@ -72,3 +72,29 @@
   }
 
 ```
+
+## コンストラクタパターン
+
+```scala
+ // コンストラクタパターン ※深いマッチ(BinOpか、0か・・まで)
+  expr match {
+    case BinOp("+", e, Number(0)) => println("a deep match")
+    case _ =>
+  }
+```
+
+## シーケンスパターン
+
+```scala
+  // シーケンスパターン => 3つ固定のリストかどうか（最初は0、あとはなんでも)
+  expr match {
+    case List(0, _, _) => println("found it")
+    case _ =>
+  }
+  
+  // 任意の長さ
+  expr match {
+    case List(0, _*) => println("found it")
+    case _ => 
+  }
+```
