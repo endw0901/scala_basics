@@ -98,3 +98,47 @@
     case _ => 
   }
 ```
+
+## タプルパターン
+```scala
+  // タプルパターン
+  def tupleDemo(expr: Any) =
+    expr match{
+      case (a,b,c) => println("matched " + a + b + c )
+      case _ =>
+    }
+  
+  // タプルを渡す
+  tupleDemo(("a ", 3, "-tuple"))
+  
+  // 型付きパターン
+  def generalSize(x: Any) = x match {
+    case s:String => s.length
+    case m:Map[_,_] => m.size
+    case _ => -1
+  }
+  
+  // Stringマッチ
+  generalSize("abc")
+  // Mapマッチ
+  generalSize(Map(1 -> 'a', 2 -> 'b'))
+  // マッチ無し
+  generalSize(math.Pi)
+  ```
+
+## 型付きパターン
+```scala
+  // 型付きパターン
+  def generalSize(x: Any) = x match {
+    case s:String => s.length
+    case m:Map[_,_] => m.size
+    case _ => -1
+  }
+  
+  // Stringマッチ
+  generalSize("abc")
+  // Mapマッチ
+  generalSize(Map(1 -> 'a', 2 -> 'b'))
+  // マッチ無し
+  generalSize(math.Pi)
+  ```
