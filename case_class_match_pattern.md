@@ -17,4 +17,58 @@
   v.name
 ```
 
-# パターンマッチ
+## ワイルドカード
+
+```scala
+  // wild card(_) pattern
+  expr match {
+    case BinOp(op, left, right) =>
+      println(expr + " is abinary operation")
+    case _ => // default case
+  }
+
+  expr match {
+    case BinOp(_, _, _) => println(expr + " is a binary operation")
+    case _ => println("something else")
+  }
+```
+
+## 定数パターンと変数パターン
+- 変数はワイルドカードと同じだが、値を掴めるのでprint文字列にそのまま使える
+- 小文字は変数、大文字は定数→下記は変数のため、case _ はとおらずすべてpiにつかまるため、コンパイルwarning発生
+- バッククォートで小文字でも定数扱いできる
+```scala
+  // 定数パターン
+  def describe(x: Any) = x match {
+    case 5 => "five"
+    case true => "truth"
+    case "hello" => "hi"
+    // Nilは空リストにだけマッチ
+    case Nil =>  "empty list"
+    case _ => "something else"
+  }
+
+  // 使い方
+  describe(5)
+  describe(true)
+  describe("hello")
+  describe(Nil)
+  describe(List(1,2,3))
+
+  // 変数はワイルドカードと同じだが、値を掴めるのでprint文字列にそのまま使える
+  // 小文字は変数、大文字は定数→下記は変数のため、case _ はとおらずすべてpiにつかまるため、コンパイルwarning発生
+  import math.{E, Pi}
+  val pi = math.Pi
+  E match {
+    // piは変数
+    case pi => "strange math? Pi = " + pi
+    case _ => "ok"
+  }
+
+  // バッククオート使えば小文字でも定数と解釈される
+  E match {
+    case `pi` => "strange math? Pi = " + pi
+    case _ => "ok"
+  }
+
+```
