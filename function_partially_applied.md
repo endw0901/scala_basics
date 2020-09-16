@@ -32,10 +32,32 @@ val c = sum _
 val c = sum
 ```
 
-## ケースシーケンス
+## ケースシーケンス・部分関数
 - p.282
+- マッチが網羅的でないケースシーケンス
+- ::はリストの表記 ※(1,2,3)は 1 :: 2 :: 3とも書ける
 ```scala
+// リストの2つめの要素を返す(関数型「List[Int] => Int」)
 val second: List[Int] => Int = {
   case x :: y :: _ => y
 }
+
+// 結果：6
+second(List(5, 6, 7))
+// 結果 エラー
+second(List())
 ```
+
+### 部分関数のチェック
+- isDefinedAtチェックがある前提で部分関数を利用する(Akkaなどで)
+```scala
+ // 部分関数型(空リストでエラーになるので網羅的ではない）
+ val second: PartialFunction[List[Int], Int] = {
+  case x :: y :: _ => y
+ }
+ 
+ // ture
+ second.isDefinedAt(List(5,6,7))
+ // false => このチェックがある前提で部分関数を利用する(Akkaなどで)
+ second.isDefinedAt(List())
+ ```
