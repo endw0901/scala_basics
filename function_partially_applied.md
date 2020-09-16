@@ -61,3 +61,4 @@ second(List())
  // false => このチェックがある前提で部分関数を利用する(Akkaなどで)
  second.isDefinedAt(List())
  ```
+
