@@ -31,3 +31,11 @@ val c = sum _
 // NGケース
 val c = sum
 ```
+
+## ケースシーケンス
+- p.282
+```scala
+val second: List[Int] => Int = {
+  case x :: y :: _ => y
+}
+```
