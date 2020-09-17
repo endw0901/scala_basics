@@ -38,3 +38,26 @@ listdata.mkString(", ")
 ## appendとprepend
 - p.66
 - appendはデータ保持の問題で遅い。代わりに、prepend(先頭挿入) + reverseで逆転して最後のを最初に持ってくる
+
+## 基本メソッド
+- p.296
+```scala
+ val fruit = List("apples","oranges","pears")
+ val nums = List(1,2,3,4)
+ val diag3 =
+  List(
+   List(1,0,0),
+   List(0,1,0),
+   List(0,0,1)
+  )
+ val empty = List()
+
+ println(empty.isEmpty)
+ println(fruit.isEmpty)
+ println(fruit.head)
+ // tail = 先頭を除くリストを返す
+ println(fruit.tail)
+ // tail.head = 先頭を除くリストの先頭(=元リストの2番目)を返す
+ println(fruit.tail.head)
+ println(diag3.head)
+```
