@@ -61,6 +61,66 @@ listdata.mkString(", ")
  println(fruit.tail.head)
  println(diag3.head)
 ```
+### 結合
+
+```scala
+ // Nilは空リスト
+ val nums = 1 :: 2 :: 3 :: Nil
+ // List(1,2,3)
+ println(nums)
+
+ // :::はリスト同士の結合
+ // List(1,2,3,4,5)
+ println(List(1,2) ::: List(3,4,5))
+
+```
+
+### headとtail, initとlast
+- p.301
+- initとlastはリスト全体をたどらないと操作できないため時間がかかる。
+```scala
+ val fruit = List("apples","oranges","pears")
+ 
+ // head = 先頭の要素を返す 
+ println(fruit.head)
+ // tail = 先頭を除くリストを返す
+ println(fruit.tail)
+
+ // init = 最後の要素を除くリストを返す 
+ println(fruit.init)
+ // last = 最後の要素を返す
+ println(fruit.last)
+```
+
+### 反転
+- リストはimmutableなので、reverseは新しいリストを作る。元リストはそのまま
+```scala
+// List(e, d, c, b, a)
+abcde.reverse
+
+```
+
+- reverseとhead-tail, init-last
+```scala
+// e,d,c,b
+xs.reverse.init equals xs.tail.reverse
+// d,c,b,a
+xs.reverse.tail equals xs.init.reverse
+// e
+xs.reverse.head equals xs.last
+// a
+xs.reverse.last equals xs.head
+
+```
+
+#### :::を使ったreverse
+```scala
+def rev[T](xs: List[T]): List[T] = xs match {
+  case List() => xs
+  case x :: xs1 => rev(xs1) ::: List(x)
+}
+```
+
 
 ## サンプル：ソートアルゴリズム
 ```scala
