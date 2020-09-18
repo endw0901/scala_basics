@@ -121,6 +121,76 @@ def rev[T](xs: List[T]): List[T] = xs match {
 }
 ```
 
+### drop, take, splitAt
+
+```scala
+val abcde = List('a','b','c','d','e')
+
+  // List(a,b) 最初の2つを取る
+ abcde take 2
+ 
+ // List(c,d,e)  最初の2つ以外をとる
+ abcde drop 2
+
+ // (List(a,b), List(c,d,e))
+ abcde splitAt 2
+```
+
+### リストのリストを単層にする：flatten
+```scala
+// List(1,2,3,4,5)
+List(List(1,2),List(3,4,5)).flatten
+```
+
+### 添え字を返す:indices
+```scala
+val abcde = List('a','b','c','d','e')
+// Range(0,1,2,3,4)
+abcde.indices
+```
+
+### ペアを作るzip
+```scala
+ // ((0,a),(1,b),(2,c),(3,d),(4,e)
+ abcde.indices zip abcde
+ 
+ // こちらの方が簡単(index + valueのとき)
+ abcde.zipWithIndex
+ ```
+- unzipでziplistを展開
+
+### mkString
+- pre + sep + post
+```scala
+// [a,b,c,d,e]
+abcde mkString ("[", ",", "]")
+```
+
+### iterator
+```scala
+  val abcde = List('a','b','c','d','e')
+// nextからaがとれる
+ println(abcde.iterator.next)
+```
+
+### 位置を指定してcopy : copyToArray
+```scala
+// Array(0,0,0,0,0,0,0,0,0,0)
+val arr = new Array[Int](10)
+// Array(0,0,0,1,2,3,0,0,0,0)
+List(1,2,3) copyToArray(arr,3)
+
+
+```
+
+### iterator, Array
+```scala
+// Array(a,b,c)
+val arr = abc.toArray
+
+// List(a,b,c)
+arr.toList
+```
 
 ## サンプル：ソートアルゴリズム
 ```scala
