@@ -55,3 +55,21 @@
   val data6 = List(1,2,3,-4,5) span (_ > 0)
   println(data6)
 ```
+
+## foall exists 述語関数
+```scala
+  val diag3 =
+    List(
+      List(1,0,0),
+      List(0,1,0),
+      List(0,0,1)
+    )
+   
+   // リストの要素に対して→exists 条件を満たす要素が存在するかどうか
+   // リストの要素のリストに対して→forall リストの全ての要素が条件を満たすかどうか
+   def hasZeroRow(m: List[List[Int]]) =
+     m exists (row => row forall (_ == 0))
+
+   println(hasZeroRow(diag3))
+```
+
