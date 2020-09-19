@@ -7,7 +7,7 @@
  
  // こちらの方が簡単(index + valueのとき)
  abcde.zipWithIndex
- '''
+ ```
  
  ## zipped
  ```scala
