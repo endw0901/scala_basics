@@ -2,7 +2,12 @@
 - list:重複ok ⇔ set：重複NG
 - map:key-value
 
+## mutableとimmutable
 - mapはimmutable、importでmutable
+
+### メモリ効率
+- immutableは16-40バイト、参照追加のみなのでポインタ分のみ
+- mutableは80バイト、追加するたびに16バイトずつ増える
 
 ## immutableなmap
 
