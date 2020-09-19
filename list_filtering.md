@@ -35,7 +35,7 @@
   List(1,2,3,4,5) partition (_ %  2 == 0)
 ```
 
-### takeWhile, dropWhile
+### takeWhile, dropWhile, span
 ```scala
   // List(1,2,3,5)を返す
   val data3 = List(1,2,3,-4,5) filter (_ > 0)
@@ -47,4 +47,11 @@
   // List(-4,5) ※連続で成功するところまでを除いたのこりを返す
   val data5 = List(1,2,3,-4,5) dropWhile (_ > 0)
   println(data5)
+```
+
+- span = takeWhile + dropWhile
+```scala
+  // (List(1, 2, 3),List(-4, 5))
+  val data6 = List(1,2,3,-4,5) span (_ > 0)
+  println(data6)
 ```
