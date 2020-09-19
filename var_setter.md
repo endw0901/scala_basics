@@ -1,5 +1,6 @@
 # varのセッター
-
+- p.344 
+- p.114 toStringメソッドのオーバーライド
 ```scala
   // サンプル
   class Thermometer {
@@ -13,13 +14,16 @@
     override def toString = fahrenheit + "F/" + celsius + "C"
   }
 
-  //
+  //　使い方
   val t = new Thermometer
+  
   t.celsius = 100
+  // 212.0F/100.0C
   println(t)
 
   t.fahrenheit = -42
-  println(t)
+  // -42.0F/-41.11111C
+println(t)
 ```
 
 - 別サンプル
