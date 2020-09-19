@@ -192,6 +192,12 @@ val arr = abc.toArray
 arr.toList
 ```
 
+### sortWith
+```scala
+List(1, -3, 4, 2, 6) sortWith (_ < _)
+words sortWith (_.length > _.length)
+```
+
 ## サンプル：ソートアルゴリズム
 ```scala
  // ソートアルゴリズム
