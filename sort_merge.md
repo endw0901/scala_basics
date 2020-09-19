@@ -33,9 +33,11 @@
 ```scala
   // まずlessの定義だけ入れて欠けた引数を後から引き渡す
   val mixedInts = List(4,1,0,9,5,8,3,6)
+  
   // 昇順
   val intSort = msort((x: Int, y: Int) => x < y) _
   println(intSort(mixedInts))
+  
   // 降順
   val reverseIntSort = msort((x: Int, y: Int) => x > y) _
   println(reverseIntSort(mixedInts))
