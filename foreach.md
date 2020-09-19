@@ -74,3 +74,10 @@ val someNumbers = List(-11, 10, 0, 5, 10)
 sumeNumbers.filter(_ > 0)
 // 結果・・・List[Int] = List(5, 10)
 ```
+
+## List + foreach + 手続き
+```scala
+  var sum = 0
+  List(1,2,3,4,5) foreach (sum += _)
+  println(sum)
+```
