@@ -76,6 +76,8 @@ sumeNumbers.filter(_ > 0)
 ```
 
 ## List + foreach + 手続き
+- 結果型はUnit型なので何も返さない
+- リストの全ての要素に対して手続きを適用(1+2+3+4+5)で、sum=15になる
 ```scala
   var sum = 0
   List(1,2,3,4,5) foreach (sum += _)
