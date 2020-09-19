@@ -28,6 +28,8 @@
 ```
 
 ## カリー化を利用したソート
+- カリー化について：https://github.com/endw0901/scala_basics/blob/master/currying.md
+
 ```scala
   // まずlessの定義だけ入れて欠けた引数を後から引き渡す
   val mixedInts = List(4,1,0,9,5,8,3,6)
@@ -37,5 +39,5 @@
   // 降順
   val reverseIntSort = msort((x: Int, y: Int) => x > y) _
   println(reverseIntSort(mixedInts))
-  ```
 ```
+
