@@ -11,7 +11,10 @@
   // (List(a, b, c) :\ z) (op) equals op(a, op(b, op(c,z)))
   def flattendLeft[T](xss: List[List[T]]) =
     (List[T]() /: xss) (_ ::: _)
+```
 
+- 型アノテーション:https://github.com/endw0901/scala_basics/blob/master/type_annotation_generics.md
+```scala
   // 型推論ではリストの要素型は推論できないためアノテーションを省略できない　
   def flattendRight[T](xss: List[List[T]]) =
     // (xss :\ List())とするとエラーとなる
