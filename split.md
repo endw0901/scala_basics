@@ -1,4 +1,5 @@
 # 文字列split
+- タプル： https://github.com/endw0901/scala_basics/blob/master/tuple.md
 - 文字列"The quick brownishorange fox"を半角スペースで分割
 - 「"The quick brownishorange fox".split(" ")」
 
