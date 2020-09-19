@@ -13,8 +13,22 @@
   val data2 = words filter (_.length == 3)
 ```
 
-## partition
+### find
+- filterと同じだが最初の要素だけ返す
+```scala
+ 　val data = List(1,2,3,4,5) find (_ % 2 == 0)
+  
+  // Some(2)
+  println(data)
 
+  val words = List("the", "quick", "brown", "fox")
+  val data2 = words find (_.length == 3)
+  // Some(the)
+  println(data2)
+```
+
+## partition
+- Someは値があることを示す
 ```scala
   // xs partition p equals (xs filter p, xs filter (!p(_)))
   // trueリスト + false リストにわける→ (List(2,4), List(1,3,5))
