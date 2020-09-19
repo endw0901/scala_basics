@@ -33,3 +33,7 @@ println(plainOldSum(1)(2)
   }
  
 ```
+
+## サンプル
+- ソートマージ
+- https://github.com/endw0901/scala_basics/blob/master/sort_merge.md
