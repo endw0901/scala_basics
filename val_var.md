@@ -12,7 +12,7 @@
 - https://github.com/endw0901/scala_basics/blob/master/abstract_members.md
 
 ## 暗黙のゲッター/セッター
-
+- クラス(抽象含む)のメンバーとしてvarを宣言すると、自動的に暗黙のゲッター・セッターが作られる
 ```scala
   trait AbstractTime {
     var hour: Int
@@ -29,3 +29,21 @@
     def minute_=(x: Int) //setter
   }
 ```
+
+## traitの中の抽象val実装
+ 
+```scala
+  // traitの中の抽象val
+  trait RationalTrait {
+    val numerArg: Int
+    val denomArg: Int
+  }
+  
+  // 実装 
+  new RationalTrait {
+    val numerArg = 1
+    val denomArg = 2
+  }
+```
+
+### 事前初期化済みフィールドと遅延評価
