@@ -53,3 +53,37 @@ new Queue(List(1,2), List(3))
 ```
 
 - 連続型パラメータ： https://github.com/endw0901/scala_basics/blob/master/function_multiple_args.md
+
+## 最適化された関数型待ち行列
+- 変位指定 https://github.com/endw0901/scala_basics/blob/master/trait_type_constructor.md
+- headを連続してcallするとmirrorがtrailingをleadingに繰り返しコピーする問題を改善
+- Queue[+T]は共変
+```scala
+  // 変位指定(variant)：共変covariant 
+  class Queue[+T] private (
+                          private[this] var leading: List[T],
+                          private[this] var trailing: List[T]
+                          ){
+    private def mirror() =
+      // 初回だけ
+      if (leading.isEmpty) {
+        while (!trailing.isEmpty) {
+          leading = trailing.head :: leading
+          trailing = trailing.tail
+        }
+      }
+    def head: T = {
+      // 連続でheadをcallしても、既にleadingに要素があれば毎回trailingからcopyは起こらない
+      mirror()
+      leading.head
+    }
+    def tail: Queue[T] = {
+      mirror()
+      new Queue(leading.tail, trailing)
+    }
+    // UはサブTのスーパー型Uでなければならない　※下限境界 lower bounds
+    def enqueue[U >: T](x: U) =
+      // 初回はleading(空), x :: trailing(空)で、leadingにはxの先頭、trailingには残りがmirrorでセットされる
+      new Queue[U](leading, x :: trailing)
+  }
+```
