@@ -18,6 +18,7 @@
 ```scala
   // 関数型待ち行列の基本形
   class Queue[T](
+    // 非公開コンストラクター
     private val leading: List[T], // 1,2,3
     private val trailing: List[T] // 6,5,4 => reverse 4,5,6
                 ){
@@ -39,3 +40,12 @@
       new Queue(leading, x :: trailing)
   }
 ```
+
+### 非公開コンストラクター
+- クラス自体の内部とコンパニオンオブジェクトだけがアクセスできる
+- 外部からはアクセスできない
+```scala
+// エラーとなる
+new Queue(List(1,2), List(3))
+```
+
