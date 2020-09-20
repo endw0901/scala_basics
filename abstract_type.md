@@ -1,4 +1,5 @@
 # 抽象型
+- 抽象メンバー：https://github.com/endw0901/scala_basics/blob/master/abstract_members.md
 
 ## タイプミスマッチ
 - コンパイルエラーとなる例（タイプミスマッチ)
