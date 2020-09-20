@@ -12,3 +12,6 @@ object ScalaPlayground extends App {
   println(twice(_ +1, 5))
 }
 ```
+
+## 関数型の関数トレイトへの展開と変位指定(variant)
+- https://github.com/endw0901/scala_basics/blob/master/trait_type_constructor.md
