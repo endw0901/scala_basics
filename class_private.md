@@ -51,3 +51,5 @@ new Queue(List(1,2), List(3))
     }
   }
 ```
+
+- 連続型パラメータ： https://github.com/endw0901/scala_basics/blob/master/function_multiple_args.md
