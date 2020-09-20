@@ -32,4 +32,4 @@
 ```
 
 ### 抽象valとvar
-- https://github.com/endw0901/scala_basics/edit/master/val_var.md
+- https://github.com/endw0901/scala_basics/blob/master/val_var.md
