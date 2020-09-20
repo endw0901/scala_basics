@@ -40,3 +40,11 @@ assert(res == "a\nb\nc")
    //  満たさないときはAssertionErrorを投げる
    } ensuring (w <= _.width)
 ```
+
+## assert, assume, require, ensuring
+- https://qiita.com/kawachi/items/c3cf53e0602fb53e78e9
+
+* メソッドやコンストラクタの引数チェック → require
+* メソッドの戻り値チェック → ensuring
+* 別の assert の前提となる性質に言及する → assume
+* その他 → assert
