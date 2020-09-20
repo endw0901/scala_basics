@@ -112,4 +112,34 @@ val denomArg = this.numerArg * 2
 ### 遅延評価valによるtraitの初期化
 - trait https://github.com/endw0901/scala_basics/edit/master/trait.md
 
+```scala
+   trait LazyRationalTrait {
+    val numerArg: Int
+    val denomArg: Int
+    lazy val numer = numerArg / g
+    lazy val denom = denomArg / g
+    override def toString = numer + "/" + denom
+    private lazy val g = {
+      require(denomArg != 0)
+      gcd(numerArg, denomArg)
+    }
+    private def gcd(a: Int, b: Int): Int =
+      if (b == 0) a else gcd(b, a % b)
+      // (2,4) => gcd(4,2/4あまり2) => gcd(4,2) = > gcd(2, 4/2あまり0) => b==0なのでreturn a = 2 => g=2が返る
+  }
 
+  val x = 2
+  val y = new LazyRationalTrait {
+    val numerArg = 1 * x
+    val denomArg = 2 * x
+  }
+  println(y)
+```
+
+1.LazyRationalTraitの新しいインスタンスが生成され、初期化コード実行 ※初期化されていない
+2.無名サブクラスの基本コンストラクター(new LazyRationalTrait)が実行され、numerArg = 2, denomArg= 4で初期化される
+3.toStringが呼び出される numer / denom
+4.ここでnumerが初めて参照され、初期化子が評価される(lazy val numer = numerArg / g) 
+5.ここでgが参照され、private lazy val gが評価される ※requireの時点で、denomArg=4なのでエラーにはならない。ここでg = 2となり、numberArg = 2/2, denomArg = 4/2
+6.toStringのnumerの次にdenomが評価されるが、既に初期化済みなのでskip
+7.toStringのnumer / denomが　1/2と評価済みなので、1/2が表示される
