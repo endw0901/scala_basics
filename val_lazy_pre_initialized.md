@@ -136,10 +136,10 @@ val denomArg = this.numerArg * 2
   println(y)
 ```
 
-1.LazyRationalTraitの新しいインスタンスが生成され、初期化コード実行 ※初期化されていない
-2.無名サブクラスの基本コンストラクター(new LazyRationalTrait)が実行され、numerArg = 2, denomArg= 4で初期化される
-3.toStringが呼び出される numer / denom
-4.ここでnumerが初めて参照され、初期化子が評価される(lazy val numer = numerArg / g) 
-5.ここでgが参照され、private lazy val gが評価される ※requireの時点で、denomArg=4なのでエラーにはならない。ここでg = 2となり、numberArg = 2/2, denomArg = 4/2
-6.toStringのnumerの次にdenomが評価されるが、既に初期化済みなのでskip
-7.toStringのnumer / denomが　1/2と評価済みなので、1/2が表示される
+1. LazyRationalTraitの新しいインスタンスが生成され、初期化コード実行 ※初期化されていない
+1. 無名サブクラスの基本コンストラクター(new LazyRationalTrait)が実行され、numerArg = 2, denomArg= 4で初期化される
+1. toStringが呼び出される numer / denom
+1. ここでnumerが初めて参照され、初期化子が評価される(lazy val numer = numerArg / g) 
+1. ここでgが参照され、private lazy val gが評価される ※requireの時点で、denomArg=4なのでエラーにはならない。ここでg = 2となり、numberArg = 2/2, denomArg = 4/2
+1. toStringのnumerの次にdenomが評価されるが、既に初期化済みなのでskip
+1. toStringのnumer / denomが　1/2と評価済みなので、1/2が表示される
