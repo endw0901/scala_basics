@@ -1,5 +1,6 @@
 # val_事前初期化済みフィールドと遅延評価
 - 抽象メンバー https://github.com/endw0901/scala_basics/edit/master/val_var.md
+- valとvar https://github.com/endw0901/scala_basics/blob/master/val_var.md
 
 ## 評価順の違い
 ```scala
