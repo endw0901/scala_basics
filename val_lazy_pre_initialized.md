@@ -111,7 +111,7 @@ val denomArg = this.numerArg * 2
 
 ### 遅延評価valによるtraitの初期化
 - trait https://github.com/endw0901/scala_basics/edit/master/trait.md
-
+- 遅延評価はオンデマンドで評価される。ソースコード上の記載順は関係ない
 ```scala
    trait LazyRationalTrait {
     val numerArg: Int
