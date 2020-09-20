@@ -41,6 +41,7 @@ println(t)
 ```
 
 ## 抽象クラスも
+- - クラス(抽象含む)のメンバーとしてvarを宣言すると、自動的に暗黙のゲッター・セッターが作られる
 ```scala
   trait AbstractTime {
     var hour: Int
