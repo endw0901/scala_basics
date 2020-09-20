@@ -76,10 +76,35 @@
 ### 事前初期化済みフィールドは構築中オブジェクトを参照できない
 - スーパークラスのコンストラクターが呼び出される前に初期化されるため、事前初期化済みフィールドは構築中オブジェクトを参照できない
 
+- thisでerrorとなる例
 ```scala
 // errorとなる
 new {
 val numerArg = 1
 val denomArg = this.numerArg * 2
 } with RationalTrait
+```
+
+
+## 遅延評価val
+- 1.通常の例
+```scala
+  // 1.通常の例
+  object Demo {
+    val x = { println("initializing x"); "done" }
+  }
+  
+  Demo // オブジェクト参照した時点でxは初期化される
+  Demo.x // String = done
+```
+- 2.遅延評価版
+```scala
+  // 2.遅延評価版
+  object Demo {
+    lazy val x = { println("initializing x"); "done"}
+  }
+  
+  Demo   // Demoを初期化してもxは初期化されない。
+  Demo.x // xが参照された時初めて初期化される String = done
+  // 2回目以降のx参照は、格納済みのx値を参照するため初期化は1度だけ
 ```
