@@ -39,3 +39,21 @@ println(t)
     def minute_=(x: Int) = { m = x }
   }
 ```
+
+## 抽象クラスも
+```scala
+  trait AbstractTime {
+    var hour: Int
+    var minute: Int
+  }
+
+  // 再代入可能なフィールドは作られない
+  // クラス(抽象含む)のメンバーとしてvarを宣言すると、自動的に暗黙のゲッター・セッターが作られる
+  trait AbstractTime {
+    def hour: Int        // getter
+    def hour_=(x: Int)   // setter
+
+    def minute: Int      // getter
+    def minute_=(x: Int) //setter
+  }
+```
