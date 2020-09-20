@@ -31,7 +31,10 @@
   }
 ```
 
-### 抽象valとvar
+## 抽象型
+- https://github.com/endw0901/scala_basics/blob/master/abstract_type
+
+## 抽象valとvar
 - https://github.com/endw0901/scala_basics/blob/master/val_var.md
 
 - val_事前初期化済みフィールドと遅延評価：https://github.com/endw0901/scala_basics/blob/master/val_lazy_pre_initialized.md
