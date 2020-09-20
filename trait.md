@@ -51,3 +51,6 @@ object ScalaPlayground extends App {
   println(rect.width)
 }
 ```
+
+## traitのコンパニオンオブジェクトと非公開クラス
+- https://github.com/endw0901/scala_basics/blob/master/class_private.md
