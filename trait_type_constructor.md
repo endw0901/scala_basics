@@ -31,3 +31,42 @@ trait Queue[+T] {......}
 // 反変contravariant
 trait Queue[-T] {....}
 ```
+
+## 関数型の関数トレイトへの展開と変位指定(variant)
+- 関数型「S => T」を使うと関数トレイトに展開される
+- 引数は反変の-S、結果は共変の+T
+```scala
+// 関数トレイト
+TRAIT fUNCTION1[-S, +T] {
+  def apply(x: S): T
+}
+```
+
+### 関数型パラメータの変位指定サンプル
+- p.376
+
+- 「サブBook => スーパーAnyRef」を、「スーパーPublication => サブString」として扱う（-S反変、+T共変)
+- PublicationのメソッドはサブクラスBookでもすべて使えるので反変（サブをスーパーとして扱う)
+- StringだけでなくAnyRefのサブクラスどれを使っても満たせるので共変(スーパーをサブとして扱う)
+
+```scala
+ class Publication(val title: String)
+ class Book(title: String) extends Publication(title)
+  
+ object Library {
+   val books: Set[Book] =
+     Set(
+       new Book("Programming in Scala"),
+       new Book("Walden")
+     )
+   // 関数型:サブBookに引き渡しをスーパーPublicationとして引き渡し（反変）、結果のサブStringをAnyRefに(共変）
+   def printBookList(info: Book => AnyRef) = {
+     for (book <- books) println(info(book))
+   }
+ }
+ object Customer extends App{
+    def getTitle(p: Publication): String = p.title
+    // getTitle関数を「関数型Book => AnyRef」に渡す
+    Library.printBookList(getTitle)
+ }
+```
