@@ -49,3 +49,5 @@
 new Queue(List(1,2), List(3))
 ```
 
+### 非公開クラスで関数型待ち行列トレイト
+- https://github.com/endw0901/scala_basics/blob/master/class_private.md
