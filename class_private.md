@@ -61,7 +61,7 @@ new Queue(List(1,2), List(3))
 ```scala
   // 変位指定(variant)：共変covariant 
   class Queue[+T] private (
-                          private[this] var leading: List[T],
+                          private[this] var leading: List[T], // private[this]を外すとエラーになる(varは変位指定の規則違反だが非公開ならok)
                           private[this] var trailing: List[T]
                           ){
     private def mirror() =
