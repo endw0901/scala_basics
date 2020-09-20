@@ -54,3 +54,6 @@ object ScalaPlayground extends App {
 
 ## traitのコンパニオンオブジェクトと非公開クラス
 - https://github.com/endw0901/scala_basics/blob/master/class_private.md
+
+## 遅延評価valによるtraitの初期化
+- https://github.com/endw0901/scala_basics/blob/master/val_lazy_pre_initialized.md
