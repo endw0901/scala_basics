@@ -17,7 +17,7 @@
 
 ### 評価順の違いによるエラー発生の例
 - 後で評価されるものを使ったため、0となってしまいrequireでエラー
-
+- assert, assume, require, ensuring https://github.com/endw0901/scala_basics/blob/master/assertion_test.md
 ```scala
   trait RationalTrait {
     val numerArg: Int
