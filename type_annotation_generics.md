@@ -1,4 +1,5 @@
 # 型アノテーション
+- 変位指定(variant)：https://github.com/endw0901/scala_basics/blob/master/trait_type_constructor.md
 - https://qiita.com/f81@github/items/7a664df8f4b87d86e5d8
 
 ## 型アノテーション（型パラメータ）
