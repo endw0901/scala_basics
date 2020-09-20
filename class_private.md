@@ -87,3 +87,6 @@ new Queue(List(1,2), List(3))
       new Queue[U](leading, x :: trailing)
   }
 ```
+
+- UはサブTのスーパー型Uでなければならない　※下限境界 lower bounds
+- Queue[+T]共変なので、スーパーUのサブ型として使える Queue[AnyRef]はQueue[Int]やQueue[String]として扱える
