@@ -32,7 +32,7 @@
 ```
 
 ## 抽象型
-- https://github.com/endw0901/scala_basics/blob/master/abstract_type
+- https://github.com/endw0901/scala_basics/blob/master/abstract_type.md
 
 ## 抽象valとvar
 - https://github.com/endw0901/scala_basics/blob/master/val_var.md
