@@ -37,7 +37,7 @@ trait Queue[-T] {....}
 - 引数は反変の-S、結果は共変の+T
 ```scala
 // 関数トレイト
-TRAIT fUNCTION1[-S, +T] {
+trait Function1[-S, +T] {
   def apply(x: S): T
 }
 ```
