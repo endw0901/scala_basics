@@ -108,3 +108,8 @@ val denomArg = this.numerArg * 2
   Demo.x // xが参照された時初めて初期化される String = done
   // 2回目以降のx参照は、格納済みのx値を参照するため初期化は1度だけ
 ```
+
+### 遅延評価valによるtraitの初期化
+- trait https://github.com/endw0901/scala_basics/edit/master/trait.md
+
+
