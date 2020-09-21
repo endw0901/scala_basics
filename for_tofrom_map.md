@@ -3,6 +3,8 @@
 - forクエリ：https://github.com/endw0901/scala_basics/blob/master/for_query.md
 
 ## for式をmap/flatMapに置き換え
+- map/flatMap: https://github.com/endw0901/scala_basics/blob/master/map_flatmap.md
+
 ### 1.for⇔map
 ```scala
   // 1.for⇔map
