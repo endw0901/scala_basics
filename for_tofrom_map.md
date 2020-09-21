@@ -104,3 +104,17 @@
       for (x <- xs if p(x)) yield x
   }
 ```
+
+### クラス宣言した場合
+```scala
+  abstract class C[A] {
+    // mapは関数を引数に取る(A型をB型に変換)=>結果はコレクションC型
+    def map[B](f: A => B): C[B]
+    // flatMapはB型の要素を集めたCコレクション
+    def flatMap[B](f: A => C[B]): C[B]
+    // 述語関数
+    def withFilter(p: A => Boolean): C[A]
+    // A型を取りUnitを返す
+    def foreach(b: A => Unit): Unit
+  }
+```
