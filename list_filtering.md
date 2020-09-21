@@ -12,6 +12,7 @@
   val words = List("the", "quick", "brown", "fox")
   val data2 = words filter (_.length == 3)
 ```
+- flatMapとfilterサンプル https://github.com/endw0901/scala_basics/blob/master/map_flatmap.md
 
 ### find
 - filterと同じだが最初の要素だけ返す
