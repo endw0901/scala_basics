@@ -1,5 +1,6 @@
 # for式クエリ
-
+- クエリをかけるデータベース作成
+- case classで定義したBook型のListのネスト
 ```scala
   case class Book(title: String, authors: String*)
 
