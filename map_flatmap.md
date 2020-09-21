@@ -40,6 +40,7 @@
 ```
 
 ### for式で分かりやすく
+- for反復処理：https://github.com/endw0901/scala_basics/blob/master/for.md
 ```scala
   val nameList3 = for (p <- persons; if !p.isMale; c <- p.children)
     yield (p.name, c.name)
