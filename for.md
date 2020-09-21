@@ -1,5 +1,7 @@
 # for反復処理
 
+- filter,flatMapをfor式に分かりやすく改善した例：https://github.com/endw0901/scala_basics/blob/master/map_flatmap.md
+
 ## generator( <- )
 - ディレクトリ内のファイルリスト表示
 - java.io.FileオブジェクトのlistFilesメソッド
