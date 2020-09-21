@@ -217,3 +217,14 @@ words sortWith (_.length > _.length)
  // insert(5,4) => (4,5)をリターン
  // (3,insert(5,4)) => (3,4,5)をリターン
 ```
+
+## 共変
+- 共変covariantのためInt⇒Anyに格納できる
+```scala
+  // Listクラスの一部
+  // abstract class List[+T]
+  
+  // 共変covariantのためInt⇒Anyに格納できる
+  val xs = List(1,2,3)
+  var ys: List[Any] = xs
+```
