@@ -96,3 +96,16 @@ object ScalaPlayground extends App {
 for (i < 0 to filesHere.length -1)
   println(filesHere(i))
 ```
+
+## 変数をforの外に出した方がいい例
+- p.449
+- 束縛変数を参照してないのでfor式の外に出した方がいい
+```scala
+
+  for (x <- 1 to 1000; y = expensiveProduct)
+    yield x * y
+  
+  // 外に出す ※束縛変数を参照してないので
+  val y = expensiveProduct
+  for (x <- 1 to 1000) yield x * y
+```
