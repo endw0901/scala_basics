@@ -49,6 +49,32 @@
   println(finnd2name)
 ```
 
+- 重複排除
+```scala
+  def removeDuplicates[A](xs: List[A]): List[A] = {
+    if (xs.isEmpty) xs
+    else
+      xs.head :: removeDuplicates(
+        xs.tail filter (x => x != xs.head)
+      )
+  }
+
+  removeDuplicates(finnd2name)
+```
+
+- 重複排除_for式
+```scala
+  def removeDuplicatesFor[A](xs: List[A]): List[A] = {
+    if (xs.isEmpty) xs
+    else
+      xs.head :: removeDuplicatesFor(
+        // xs.tail filter (x => x != xs.head)
+        for (x <- xs.tail if x != xs.head) yield x
+      )
+  }
+
+  removeDuplicatesFor(finnd2name)
+```
 
 ## N女王問題
 
