@@ -88,3 +88,31 @@ Set('a','b','c')('b') == true
 // keyで選択
 Map('a' -> 1, 'b' -> 10, 'c' -> 100)('b') == 10
 ```
+
+## mutableとimmutableの効率差
+```scala
+  // immutable Set : 要素4個までなら単一のオブジェクトで表現するコンパクト。それ以上はmutableが効率的
+  var s = Set(1,2,3)
+  s += 4; s-= 2
+  println(s) // Set(1, 3, 4)
+  
+  // mutable
+  val s2 = collection.mutable.Set(1,2,3)
+  s2 += 4 // + ++より効率的
+  s2 -= 2 // - --より効率的
+  println(s2) // HashSet(1, 3, 4)
+```
+
+### 要素数が多い場合
+```scala
+  // immutable Set : 要素4個までなら単一のオブジェクトで表現するコンパクト。それ以上はmutableが効率的
+  var s = Set(1,2,3,7,8,9)
+  s += 4; s-= 2
+  println(s) // HashSet(1, 9, 7, 3, 8, 4)
+
+  // mutable
+  val s2 = collection.mutable.Set(1,2,3,7,8,9)
+  s2 += 4 // + ++より効率的
+  s2 -= 2 // - --より効率的
+  println(s2) // HashSet(1, 3, 4, 7, 8, 9)
+```
