@@ -61,3 +61,30 @@
     case pat => expr2
   }
 ```
+
+## for => foreach変換
+
+```scala
+  // 1.例
+  for (x <- expr1) body
+  
+  expr1 foreach (x => body)
+```
+
+- フィルター付き
+```scala
+  // 2.例 フィルターつき
+  for (x <- expr1; if expr2; y <- expr3) body
+  
+  expr1 withFilter (x => expr2) foreach (x =>
+    expr3 foreach (y => body))
+  
+  // 3.実例
+  var sum = 0
+  for (xs <- xss; x <- xs) sum += x
+  
+  var sum = 0
+  xss foreach (xs =>
+    xs foreach (x =>
+      sum += x))
+```
