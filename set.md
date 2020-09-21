@@ -41,13 +41,18 @@ bSet += "C"
 
   println(nums5.size)
   println(nums5.contains(3))
+'''
 
-
+### 空のmutable集合を作る
+```scala
   // 空のmutable集合を作る
   import scala.collection.mutable
   var words = mutable.Set.empty[String]
   println("words :" + words)
+```
 
+### 要素を足す、引く
+```scala
   // 要素を足す、引く
   var words2 = words += "the"
   println(words2)
@@ -58,7 +63,10 @@ bSet += "C"
   // 複数の要素を足す、引く
   var words4 = words3 ++= List("do", "re", "mi")
   println(words4)
+```
 
+### HashSet
+```scala
   // HashSet(do)
   var words5 = words4 --= List("re", "mi")
   println(words5)
@@ -68,4 +76,15 @@ bSet += "C"
   println("words5 :" + words5)
   // () ※空セット
   println("words6 :" + words6)
+```
+
+## apply
+- applyメソッドのコレクションごとの違い
+```scala
+// 添え字で選択
+Seq(1,2,3)(1) == 2
+// 判定
+Set('a','b','c')('b') == true
+// keyで選択
+Map('a' -> 1, 'b' -> 10, 'c' -> 100)('b') == 10
 ```
