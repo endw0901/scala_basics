@@ -38,3 +38,11 @@
 
   println(namelist)
 ```
+
+### for式で分かりやすく
+```scala
+  val nameList3 = for (p <- persons; if !p.isMale; c <- p.children)
+    yield (p.name, c.name)
+
+  println(nameList3)
+```
