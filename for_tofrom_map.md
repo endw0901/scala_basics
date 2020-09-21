@@ -42,3 +42,22 @@
       b2.authors withFilter (a2 => a1 == a2) map (a2 =>
         a1))))
 ```
+
+### 5.パターン
+
+```scala
+  // 5.パターン
+  for ((x1, .., xn) <- expr1) yield expr2
+  
+  expr1.map { case (x1, ..., xn) => expr2}
+  
+  // 複雑なパターン
+  for (pat <- expr1) yield expr2
+  
+  expr1 withFilter {
+    case pat => true // パターンマッチしたものだけマッチング
+    case _ => false
+  } map {
+    case pat => expr2
+  }
+```
