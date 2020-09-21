@@ -110,7 +110,7 @@ val map = mutable.Map.empty[String, Int]
 ```
 
 ## List/SetとMap
-
+- ListはList、SetはSetを戻す
 ```scala
   val data1 = List(1,2,3) map (_ + 1)
   // List(2, 3, 4)
