@@ -28,3 +28,13 @@
   println(namelist)
 ```
 - list filtering https://github.com/endw0901/scala_basics/blob/master/list_filtering.md
+
+### withFilterを使った効率化
+
+```scala
+  // 女性データを集めた中間データ構造の生成を回避でき、効率化できる
+  val nameList2 = persons withFilter (p => !p.isMale) flatMap (p =>
+    (p.children map (c => (p.name, c.name))))
+
+  println(namelist)
+```
