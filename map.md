@@ -108,3 +108,15 @@ val map = mutable.Map.empty[String, Int]
   // HashMap(see -> 1, spot -> 2, run -> 3)
   println("result" + result)
 ```
+
+## List/SetとMap
+
+```scala
+  val data1 = List(1,2,3) map (_ + 1)
+  // List(2, 3, 4)
+  println(data1)
+
+  val data2 = Set(1,2,3) map (_ * 2)
+  // Set(2, 4, 6)
+  println(data2)
+```
