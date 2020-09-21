@@ -120,3 +120,14 @@ val map = mutable.Map.empty[String, Int]
   // Set(2, 4, 6)
   println(data2)
 ```
+
+## apply
+- applyメソッドのコレクションごとの違い
+```scala
+// 添え字で選択
+Seq(1,2,3)(1) == 2
+// 判定
+Set('a','b','c')('b') == true
+// keyで選択
+Map('a' -> 1, 'b' -> 10, 'c' -> 100)('b') == 10
+```
