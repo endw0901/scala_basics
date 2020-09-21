@@ -1,6 +1,8 @@
 # for式の変換
 
 - forクエリ：https://github.com/endw0901/scala_basics/blob/master/for_query.md
+
+## for式をmap/flatMapに置き換え
 ```scala
   // 1.for⇔map
   for (x <- expr1) yield expr2
