@@ -1,5 +1,5 @@
-# generator
-
+# forループでzipで文字列連結
+- for https://github.com/endw0901/scala_basics/blob/master/for.md
 ```scala
 object ScalaPlayground extends App {
   val filesHere = (new java.io.File(".")).listFiles
