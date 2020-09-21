@@ -27,3 +27,4 @@
   // List((Julie,Lara), (Julie,Bob))
   println(namelist)
 ```
+- list filtering https://github.com/endw0901/scala_basics/blob/master/list_filtering.md
