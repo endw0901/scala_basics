@@ -8,7 +8,7 @@
   println(data5)
 ```
 
-## flatMapとfilterのサンプル
+## flatMapとfilterのサンプル => forで効率化
 - リストから母と子のペアを取って名前を表示する
 ```scala
   case class Person(name: String,
