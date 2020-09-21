@@ -47,3 +47,6 @@
 
   println(nameList3)
 ```
+
+## map,flatMap, filterをfor式に変換
+- https://github.com/endw0901/scala_basics/blob/master/for_tofrom_map.md
