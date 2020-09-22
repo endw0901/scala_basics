@@ -2,7 +2,6 @@
 - キャッシュにないときだけ値設定する
 
 ```scala
-
   def f(x: String) = {
     println("taking my time."); Thread.sleep(100)
     x.reverse }
@@ -13,8 +12,10 @@
   def cachedF(s: String) = cache.getOrElseUpdate(s, f(s))
   // 上のdefを起動
   cachedF("abc")
+```
 
-  // 上記を別のコードの冗長な方法で
+- 上記を別のコードの冗長な方法で
+```scala
   def cachedF(arg: String) = cache get arg match {
     case Some(result) => result
     case None =>
