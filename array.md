@@ -41,3 +41,40 @@ val data = new Array[String](2)
 def above(that: Element): Element =
     new ArrayElement(this.contents ++ that.contents)  
 ```
+
+## sequenceと互換性がある
+- sequence演算をサポート
+
+```scala
+  val a1 = Array(1,2,3)
+  println(a1) // Array(1,2,3)
+
+  val a2 = a1 map (_ * 3)
+  println(a2) // Array(3,6,9)
+
+  val a3 = a2 filter (_ % 2 != 0)
+  println(a3) // Array(3,9)
+
+  println(a3.reverse) // Array(9,3)
+```
+
+### sequenceと互換性がある
+```scala
+  // sequenceと互換性がある
+  val seq: Seq[Int] = a1
+  println(seq) // WrappedArray(1,2,3)
+
+  val a4: Array[Int]  =seq.toArray
+  println(a4) // Array(1,2,3)
+
+  a1 eq a4 // true
+
+  val seq: Seq[Int] = a1
+  println(seq) // WrappedArray(1,2,3)
+
+  seq.reverse // WrappedArray(3,2,1)
+
+  val ops: collection.mutable.ArrayOps[Int] = a1 // [I(1,2,3
+
+  ops.reverse // Array(3,2,1)
+```
